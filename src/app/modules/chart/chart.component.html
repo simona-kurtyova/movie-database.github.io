@@ -1,0 +1,42 @@
+<div id="chart">
+  <div id="buttons">
+    <a
+      class="button"
+      [ngClass]="{ clickedButton: topRatedMovies === selectedButton }"
+      (click)="changeChart('movie', 'top_rated', topRatedMovies)"
+      >{{ topRatedMovies }}</a
+    >
+    <a
+      class="button"
+      [ngClass]="{ clickedButton: mostPopularMovies === selectedButton }"
+      (click)="changeChart('movie', 'popular', mostPopularMovies)"
+      >{{ mostPopularMovies }}</a
+    >
+    <a
+      class="button"
+      [ngClass]="{ clickedButton: topRatedTVShows === selectedButton }"
+      (click)="changeChart('tv', 'top_rated', topRatedTVShows)"
+      >{{ topRatedTVShows }}</a
+    >
+    <a
+      class="button"
+      [ngClass]="{ clickedButton: mostPopularTvShows === selectedButton }"
+      (click)="changeChart('tv', 'popular', mostPopularTvShows)"
+      >{{ mostPopularTvShows }}</a
+    >
+  </div>
+
+  <h1 id="biggestTitle">{{ selectedButton }}</h1>
+
+  <div id="mainContent">
+    <div *ngFor="let media of dataForChart; index as order" class="oneMedia">
+      <span class="order">{{ order + 1 }}.</span>
+      <img [src]="media.poster" alt="poster" class="poster" />
+      <span
+        class="title"
+        (click)="switchToTheMoviePage(media.id, media.media_type)"
+        >{{ media.title }}</span
+      >
+    </div>
+  </div>
+</div>

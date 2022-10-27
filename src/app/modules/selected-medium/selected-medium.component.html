@@ -1,0 +1,116 @@
+<div id="selectedMedium">
+  <div
+    id="movie"
+    *ngIf="
+      idAndTypeOfSelectedMedium &&
+      selectedMedium &&
+      idAndTypeOfSelectedMedium.media_type === 'movie'
+    "
+  >
+    <div class="firstPart">
+      <img [src]="selectedMedium.poster" class="poster" alt="poster" />
+    </div>
+    <div class="secondPart">
+      <h1 class="title">{{ selectedMedium.title }}</h1>
+      <div class="aboutMediaContent">
+        <div class="firstLine">
+          <span class="aboutMedia"
+            >{{ selectedMedium.media_type.toUpperCase() }}
+          </span>
+          •
+          <span class="aboutMedia"
+            >{{ selectedMedium.release_date }} ({{
+              selectedMedium.original_language.toUpperCase()
+            }})</span
+          >•
+          <span class="aboutMedia">{{
+            selectedMedium.status.toUpperCase()
+          }}</span>
+        </div>
+        <div class="secondLine">
+          <span
+            class="aboutMedia popularity"
+            [ngClass]="{
+              red: selectedMedium.popularity < 4,
+              yellow:
+                4 <= selectedMedium.popularity && selectedMedium.popularity < 7,
+              green: 7 <= selectedMedium.popularity
+            }"
+          >
+            ⭐{{ selectedMedium.popularity }}
+          </span>
+          <span class="aboutMedia tagline">-{{ selectedMedium.tagline }}</span>
+        </div>
+        <h2 class="overviewTitle">Overview</h2>
+        <span class="aboutMedia overview">{{ selectedMedium.overview }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div
+    id="tv"
+    *ngIf="
+      idAndTypeOfSelectedMedium &&
+      selectedMedium &&
+      idAndTypeOfSelectedMedium.media_type === 'tv'
+    "
+  >
+    <div class="firstPart">
+      <img [src]="selectedMedium.poster" class="poster" alt="poster" />
+    </div>
+    <div class="secondPart">
+      <h1 class="title">{{ selectedMedium.title }}</h1>
+      <div class="aboutMediaContent">
+        <div class="firstLine">
+          <span class="aboutMedia"
+            >{{ selectedMedium.media_type.toUpperCase() }}
+          </span>
+          •
+          <span class="aboutMedia"
+            >({{ selectedMedium.original_language.toUpperCase() }})</span
+          >
+          •
+          <span
+            class="aboutMedia"
+            *ngIf="selectedMedium.number_of_seasons === 1"
+            >{{ selectedMedium.number_of_seasons }} season</span
+          >
+          <span class="aboutMedia" *ngIf="selectedMedium.number_of_seasons != 1"
+            >{{ selectedMedium.number_of_seasons }} seasons</span
+          >
+          •
+          <span
+            class="aboutMedia"
+            *ngIf="selectedMedium.number_of_episodes === 1"
+            >{{ selectedMedium.number_of_episodes }} episode</span
+          >
+          <span
+            class="aboutMedia"
+            *ngIf="selectedMedium.number_of_episodes != 1"
+            >{{ selectedMedium.number_of_episodes }} episodes</span
+          >
+          •
+          <span class="aboutMedia">{{
+            selectedMedium.status.toUpperCase()
+          }}</span>
+        </div>
+        <div class="secondLine">
+          <span
+            class="aboutMedia popularity"
+            [ngClass]="{
+              red: selectedMedium.popularity < 4,
+              yellow:
+                4 <= selectedMedium.popularity && selectedMedium.popularity < 7,
+              green: 7 <= selectedMedium.popularity
+            }"
+          >
+            ⭐{{ selectedMedium.popularity }}
+          </span>
+          <span class="aboutMedia tagline">-{{ selectedMedium.tagline }}</span>
+        </div>
+        <h2 class="overviewTitle">Overview</h2>
+        <span class="aboutMedia overview">{{ selectedMedium.overview }}</span>
+      </div>
+    </div>
+  </div>
+</div>

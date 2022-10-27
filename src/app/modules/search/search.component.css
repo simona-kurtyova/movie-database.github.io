@@ -1,0 +1,123 @@
+#title {
+  text-align: center;
+  font-size: 3em;
+}
+
+#searchForm {
+  display: flex;
+  justify-content: center;
+
+  margin: 2em;
+}
+
+#searchInput {
+  border-radius: 0.4em;
+  color: rgb(29, 29, 29);
+  background-color: rgb(215, 213, 217);
+
+  font-size: 1.3em;
+
+  padding: 0.5em 0.7em;
+  width: 20em;
+}
+
+#searchInput:focus {
+  outline-offset: 0px;
+  outline: none;
+}
+
+::placeholder {
+  color: rgb(105, 104, 104);
+}
+
+#searchResultsContent {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+.result {
+  margin: 2em 0 2em 1em;
+}
+
+.order {
+  position: absolute;
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.poster {
+  width: 12em;
+  height: 17em;
+  margin-left: 4.4em;
+  margin-bottom: -3em;
+  border-radius: 1.3em;
+}
+
+.title {
+  display: block;
+
+  margin-top: 2em;
+  margin-left: 1.5em;
+
+  width: 8.2em;
+  font-size: 1.8em;
+  text-align: center;
+  color: rgb(154, 155, 156);
+}
+
+.title:hover {
+  cursor: pointer;
+  color: rgb(225, 218, 218);
+}
+
+@media only screen and (max-width: 1310px) {
+  #searchResultsContent {
+    grid-template-columns: auto auto;
+    text-align: center;
+  }
+
+  .result {
+    margin: 0;
+    padding: 2em;
+    max-width: 400px;
+  }
+
+  .poster {
+    width: 16em;
+    height: 22em;
+  }
+
+  .title {
+    font-size: 2em;
+    margin-left: 3.1em;
+  }
+}
+
+@media only screen and (max-width: 870px) {
+  .poster {
+    width: 13em;
+    height: 18em;
+  }
+
+  .title {
+    font-size: 1.5em;
+    margin-left: 4.1em;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  #searchResultsContent {
+    grid-template-columns: auto;
+    margin-left: 1.5em;
+  }
+
+  .poster {
+    width: 20em;
+    height: 28em;
+  }
+
+  .title {
+    font-size: 2em;
+    margin-left: 3.1em;
+  }
+}

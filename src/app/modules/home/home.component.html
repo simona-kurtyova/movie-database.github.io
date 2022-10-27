@@ -1,0 +1,17 @@
+<div id="homeContent">
+  <h1 id="biggestTitle">
+    Millions of movies and TV shows to discover. Let's go!
+  </h1>
+
+  <h2 id="smallerTitle">Upcoming Movies and TV Shows</h2>
+  <div class="mainContent">
+    <div
+      *ngFor="let medium of dataForUpComing"
+      id="oneMedium"
+      (click)="switchToTheMoviePage(medium.id, medium.media_type)"
+    >
+      <img [src]="medium.poster" alt="poster" id="poster" />
+      <span id="title">{{ medium.title }}</span>
+    </div>
+  </div>
+</div>

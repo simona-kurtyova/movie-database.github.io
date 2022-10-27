@@ -1,0 +1,22 @@
+<div id="topBar">
+  <h1 id="title" (click)="clickedOnTheTitle()">Movie Database</h1>
+
+  <div id="menu">
+    <a
+      class="menu-link"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      routerLink="/"
+      >Home</a
+    >
+    <a class="menu-link" routerLinkActive="active" routerLink="/trending"
+      >Trending</a
+    >
+    <a class="menu-link" routerLinkActive="active" routerLink="/chart"
+      >Charts</a
+    >
+    <a class="menu-link" routerLinkActive="active" routerLink="/search"
+      >Search</a
+    >
+  </div>
+</div>

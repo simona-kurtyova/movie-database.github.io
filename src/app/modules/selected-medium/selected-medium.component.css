@@ -1,0 +1,99 @@
+#selectedMedium {
+  margin: 2em;
+}
+
+#movie,
+#tv {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+.poster {
+  width: 22em;
+  margin-right: 2.5em;
+
+  border-radius: 1em;
+}
+
+.secondPart {
+  margin-top: -2em;
+}
+
+.title {
+  display: block;
+  margin-bottom: -0.1em;
+
+  font-size: 4em;
+  font-weight: 400;
+}
+
+.aboutMediaContent {
+  margin-top: 1em;
+}
+
+.firstLine,
+.secondLine {
+  display: block;
+  margin-bottom: 2em;
+}
+
+.aboutMedia {
+  font-size: 1.4em;
+  margin: 0 0.5em;
+}
+
+.popularity {
+  margin-right: -0.2em;
+}
+
+.red {
+  color: rgb(202, 29, 29);
+}
+
+.yellow {
+  color: rgb(246, 218, 9);
+}
+
+.green {
+  color: rgb(74, 136, 90);
+}
+
+.tagline {
+  font-style: italic;
+  color: rgb(167, 172, 172);
+}
+
+.overviewTitle {
+  font-weight: bolder;
+  color: rgb(222, 225, 225);
+
+  margin-top: 2em;
+}
+
+.overview {
+  margin: 0;
+}
+
+@media only screen and (max-width: 1220px) {
+  .title {
+    font-size: 3em;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  #selectedMedium {
+    text-align: center;
+  }
+
+  #movie,
+  #tv {
+    display: table;
+  }
+
+  .overviewTitle {
+    font-weight: bolder;
+    color: rgb(222, 225, 225);
+
+    margin-top: 0.5em;
+  }
+}

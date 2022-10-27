@@ -1,0 +1,34 @@
+<div id="trendingContent">
+  <div id="buttons">
+    <a
+      class="button"
+      [ngClass]="{ clickedButton: allTitle === selectedButton }"
+      (click)="change(allTitle, 'all')"
+      >{{ allTitle }}</a
+    >
+    <a
+      class="button"
+      [ngClass]="{ clickedButton: moviesTitle === selectedButton }"
+      (click)="change(moviesTitle, 'movie')"
+      >{{ moviesTitle }}</a
+    >
+    <a
+      class="button"
+      [ngClass]="{ clickedButton: tvShowsTitle === selectedButton }"
+      (click)="change(tvShowsTitle, 'tv')"
+      >{{ tvShowsTitle }}</a
+    >
+  </div>
+  <h1 id="biggestTitle">Trending</h1>
+  <h2 id="smallerTitle">{{ selectedButton }}</h2>
+  <div class="trendingContent">
+    <div
+      *ngFor="let media of trending"
+      class="trend"
+      (click)="switchToTheMoviePage(media.id, media.media_type)"
+    >
+      <img [src]="media.poster" alt="poster" class="poster" />
+      <span class="title">{{ media.title }}</span>
+    </div>
+  </div>
+</div>
